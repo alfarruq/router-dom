@@ -1,0 +1,23 @@
+.brandsummary {
+  height: 969px;
+  background: url(../../assets/images/brandsummarybg.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.brandsummary .container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 205px;
+}
+
+.brandsummary .text {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
