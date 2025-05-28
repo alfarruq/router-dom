@@ -1,0 +1,26 @@
+.bluebacktitle {
+  background-color: #01aee7;
+}
+
+.bluebacktitle * {
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+}
+
+.bluebacktitle div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bluebacktitle h3 {
+  color: #fff500;
+}
+
+.bluebacktitle h1 {
+  font-size: 35px;
+}
