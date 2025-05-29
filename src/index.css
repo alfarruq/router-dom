@@ -49,6 +49,10 @@ header li span {
   text-transform: uppercase;
 }
 
+header li .active span {
+  color: #01aee7;
+}
+
 footer {
   background-color: #01aee7;
 }
