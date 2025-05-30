@@ -1,0 +1,122 @@
+.section-one-contacts {
+    height: 183px;
+    background-color: #01AEE7;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-block: 15px;
+    flex-direction: column;
+}
+
+.section-one-contacts p {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #FFF500;
+}
+
+.section-one-contacts h2 {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.section-one-contacts h3 {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.section-two-contacts {
+    width: 1030px;
+    height: 692px;
+    background-image: url(../../assets/images/bg-end.svg);
+    margin-block: 55px 90px;
+}
+
+.section-three-contact {
+    height: 662px;
+    display: flex;
+}
+
+.end-contact {
+    background-color: #D9D9D9;
+    padding: 140px 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.end-contact>h2 {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #01AEE7;
+}
+
+.end-contact>h3 {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color: #01AEE7;
+    width: 262px;
+}
+
+.end-contact>div {
+    width: 422px;
+    height: 141px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.end-contact>div>h3 {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.end-contact>div>h2 {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.end-contact>div>p {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: lowercase;
+    color: #01AEE7;
+
+}
