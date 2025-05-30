@@ -1,0 +1,219 @@
+.section-one-advanteges {
+    height: 315px;
+    background-color: #01AEE7;
+    display: flex;
+    color: white;
+    padding-block: 60px;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.section-one-advanteges>p {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 13px;
+    color: #FFF500;
+}
+
+.section-one-advanteges>h2 {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+.section-one-advanteges>h3 {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    width: 920px;
+}
+
+/* section-two */
+
+.section-two-advanteges {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-two-two-advanteges {
+    height: 174px;
+    width: 1240px;
+    border-block: 1px solid #01AEE7;
+    position: relative;
+    margin-block: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-two-two-advanteges>h2 {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 100%;
+    text-transform: uppercase;
+    width: 1240px;
+    text-align: center;
+}
+
+.btn-dec {
+    width: 162px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #01AEE7;
+    color: white;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 18px;
+    position: absolute;
+    top: -20px;
+    left: 45%;
+}
+
+.section-two-one-advanteges>.card {
+    width: 295px;
+    height: 456px;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.card h3 {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 22px;
+    color: #01AEE7;
+    width: 295px;
+    height: 81px;
+
+}
+
+.card p {
+    font-family: Montserrat;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+    color: black;
+    width: 295px;
+    height: 100px;
+
+}
+
+.section-two-one-advanteges {
+    display: flex;
+    gap: 64px;
+    flex-wrap: wrap;
+    margin-block: 64px;
+}
+
+.section-three-advanteges {
+    background-image: url(../../assets/images/bg-section-fife.svg);
+    height: 717px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-three-advanteges div {
+    width: 1318px;
+    height: 618px;
+    background: #120E0E5E;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 40px 85px;
+    justify-content: space-between;
+    color: white;
+    text-align: center;
+    align-items: center;
+}
+
+.p-one-A {
+    color: #FFF500;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+}
+
+.p-two-A {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #FFF500;
+}
+
+.p-three-A {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.section-three-advanteges h2 {
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    width: 621px;
+
+}
+
+.section-three-advanteges form {
+    display: flex;
+    gap: 20px;
+}
+
+.section-three-advanteges form>input {
+    width: 295px;
+    height: 60px;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: #000000;
+    padding: 20px;
+    border: none;
+}
+
+.section-three-advanteges button {
+    width: 295px;
+    height: 60px;
+    background-color: #01AEE7;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+}

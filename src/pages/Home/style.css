@@ -1,0 +1,744 @@
+/**
+
+  Нормализация блочной модели
+
+ */
+
+*,
+
+::before,
+
+::after {
+
+  box-sizing: border-box;
+
+}
+
+
+/**
+
+  Убираем внутренние отступы слева тегам списков,
+
+  у которых есть атрибут class
+
+ */
+
+:where(ul, ol):where([class]) {
+
+  padding-left: 0;
+
+}
+
+
+/**
+
+  Убираем внешние отступы body и двум другим тегам,
+
+  у которых есть атрибут class
+
+ */
+
+body,
+
+:where(blockquote, figure):where([class]) {
+
+  margin: 0;
+
+}
+
+
+/**
+
+  Убираем внешние отступы вертикали нужным тегам,
+
+  у которых есть атрибут class
+
+ */
+
+:where(h1,
+
+  h2,
+
+  h3,
+
+  h4,
+
+  h5,
+
+  h6,
+
+  p,
+
+  ul,
+
+  ol,
+
+  dl):where([class]) {
+
+  margin-block: 0;
+
+}
+
+
+:where(dd[class]) {
+
+  margin-left: 0;
+
+}
+
+
+:where(fieldset[class]) {
+
+  margin-left: 0;
+
+  padding: 0;
+
+  border: none;
+
+}
+
+
+/**
+
+  Убираем стандартный маркер маркированному списку,
+
+  у которого есть атрибут class
+
+ */
+
+:where(ul[class]) {
+
+  list-style: none;
+
+}
+
+
+:where(address[class]) {
+
+  font-style: normal;
+
+}
+
+
+/**
+
+  Обнуляем вертикальные внешние отступы параграфа,
+
+  объявляем локальную переменную для внешнего отступа вниз,
+
+  чтобы избежать взаимодействие с более сложным селектором
+
+ */
+
+p {
+
+  --paragraphMarginBottom: 24px;
+
+
+  margin-block: 0;
+
+}
+
+
+/**
+
+  Внешний отступ вниз для параграфа без атрибута class,
+
+  который расположен не последним среди своих соседних элементов
+
+ */
+
+p:where(:not([class]):not(:last-child)) {
+
+  margin-bottom: var(--paragraphMarginBottom);
+
+}
+
+
+
+/**
+
+  Упрощаем работу с изображениями и видео
+
+ */
+
+img,
+
+video {
+
+  display: block;
+
+  max-width: 100%;
+
+  height: auto;
+
+}
+
+
+/**
+
+  Наследуем свойства шрифт для полей ввода
+
+ */
+
+input,
+
+textarea,
+
+select,
+
+button {
+
+  font: inherit;
+
+}
+
+
+html {
+
+  /**
+
+    Пригодится в большинстве ситуаций
+
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+
+   */
+
+  height: 100%;
+
+  /**
+
+    Убираем скачок интерфейса по горизонтали
+
+    при появлении / исчезновении скроллбара
+
+   */
+
+  scrollbar-gutter: stable;
+
+}
+
+
+/**
+
+  Плавный скролл
+
+ */
+
+html,
+
+:has(:target) {
+
+  scroll-behavior: smooth;
+
+}
+
+
+body {
+
+  /**
+
+    Пригодится в большинстве ситуаций
+
+    (когда, например, нужно будет "прижать" футер к низу сайта)
+
+   */
+
+  min-height: 100%;
+
+  /**
+
+    Унифицированный интерлиньяж
+
+   */
+
+  line-height: 1.5;
+
+}
+
+
+/**
+
+  Нормализация высоты элемента ссылки при его инспектировании в DevTools
+
+ */
+
+a:where([class]) {
+
+  display: inline-flex;
+
+}
+
+
+/**
+
+  Курсор-рука при наведении на элемент
+
+ */
+
+button,
+
+label {
+
+  cursor: pointer;
+
+}
+
+
+/**
+
+  Приводим к единому цвету svg-элементы
+
+  (за исключением тех, у которых уже указан
+
+  атрибут fill со значением 'none' или начинается с 'url')
+
+ */
+
+:where([fill]:not([fill="none"],
+
+    [fill^="url"])) {
+
+  fill: currentColor;
+
+}
+
+
+/**
+
+  Приводим к единому цвету svg-элементы
+
+  (за исключением тех, у которых уже указан
+
+  атрибут stroke со значением 'none')
+
+ */
+
+
+:where([stroke]:not([stroke="none"],
+    [stroke^="url"])) {
+
+  stroke: currentColor;
+
+}
+
+
+/**
+
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+
+ */
+
+svg * {
+
+  transition-property: fill, stroke;
+
+}
+
+
+/**
+
+  Приведение рамок таблиц в классический 'collapse' вид
+
+ */
+
+:where(table) {
+
+  border-collapse: collapse;
+
+  border-color: currentColor;
+
+}
+
+
+/**
+
+  Удаляем все анимации и переходы для людей,
+
+  которые предпочитают их не использовать
+
+ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+
+  *::before,
+
+  *::after {
+
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+
+  }
+
+}
+
+.container {
+  min-height: 100%;
+  line-height: 1.5;
+  overflow-x: hidden;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.sectionOne-start_video {
+  background-image: url(../../assets/images/video.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 672px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  padding-top: 10%
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+h1 {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  text-transform: uppercase;
+  width: 861px;
+  height: 122px;
+
+}
+
+.sectionOne-start_text-title {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 100%;
+  text-align: center;
+  width: 893px;
+  height: 129px;
+}
+
+.sectionOne-start_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #01AEE7;
+  height: 266px;
+  color: white;
+}
+
+/* sectionTwo */
+
+.sectionTwo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to right bottom, white 70%, #01AEE7 0%);
+}
+
+.sectionTwo-right_img {
+  background-image: url(../../assets/images/sectionTwo.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 507px;
+  height: 507px;
+}
+
+.sectionTwo-left_text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+  text-align: start;
+  width: 507px;
+  height: 507px;
+}
+
+.sectionTwo-left_text h2 {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 60px;
+  color: #000000;
+}
+
+.sectionTwo-left_text p {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 30px;
+  color: #000000;
+}
+
+.sectionTwo-left_text h3 {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 30px;
+  color: #01AEE7;
+}
+
+/* sectionThree */
+
+.bg-gray {
+  background: #F5F5F5;
+  height: 836px;
+  padding-block: 90px;
+}
+
+.sectionThree {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.section-three_one.left-sectionThree {
+  background-image: url(../../assets/images/SectionThree-img-left.svg);
+}
+
+.section-three_one.right-sectionThree {
+  background-image: url(../../assets/images/SectionThree-img-right.svg);
+}
+
+.section-three_one {
+  padding-top: 151px;
+  padding-inline: 50px;
+  padding-bottom: 33px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 684px;
+  height: 426px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section-three_one h2 {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.section-three_one p {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 18px;
+  color: #F5F5F5;
+}
+
+.line {
+  background: #FFF500;
+  width: 243px;
+  height: 2px;
+
+}
+
+.sectionThree>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.section-three_two {
+  width: 684px;
+  height: 213px;
+  background-color: #01AEE7;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 50px;
+  justify-content: space-between;
+}
+
+.section-three_two h2 {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 30px;
+  color: #FFFFFF;
+}
+
+.section-three_two p {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: capitalize;
+  width: 585px;
+}
+
+/* section four */
+
+.bg-gray-two {
+  background-color: #EEEEEE;
+  height: 1263px;
+  display: flex;
+}
+
+.sectionFour {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+  justify-content: space-between;
+}
+
+.sectioFour-right {
+  background-image: url(../../assets/images/run.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 551px;
+  height: 1263px;
+}
+
+.sectionFour-left {
+  display: flex;
+  gap: 120px;
+  flex-direction: column;
+}
+
+.sectionFour-left h2 {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 30px;
+  color: #01AEE7;
+  width: 541px;
+  height: 74px;
+}
+
+.statics-card {
+  width: 245px;
+  height: 210px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.statics>div {
+  display: flex;
+  flex-direction: column;
+  gap: 92px;
+
+}
+
+.statics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 166px;
+
+}
+
+.statics-card img {
+  width: 65px;
+  height: 58px;
+}
+
+.statics-card h3 {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 18px;
+  color: #000000;
+
+}
+
+.statics-card p {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 15px;
+  color: #000000;
+}
+
+/* sectionFife */
+
+.sectionFife {
+  background-image: url(../../assets/images/bg-section-fife.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 805px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.end-sectionFife {
+  width: 505px;
+  height: 552px;
+  background-color: #FFFFFF;
+  padding: 25px;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.end-sectionFife h2 {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 20px;
+  color: black;
+  width: 370px;
+}
+
+.p-one {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 13px;
+  width: 400px;
+}
+
+.p-two {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-size: 13px;
+  width: 450px;
+}
+
+.form-SectionFife {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.form-SectionFife input {
+  width: 450px;
+  height: 42px;
+  padding-left: 27px;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 18px;
+
+}
+
+.form-SectionFife input::placeholder {
+  color: #AFA3A3;
+}
+
+.form-SectionFife button {
+  width: 450px;
+  height: 46px;
+  background-color: #01AEE7;
+  color: white;
+  border: none;
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 18px;
+
+}
